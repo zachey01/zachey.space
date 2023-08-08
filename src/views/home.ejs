@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@v0.5.0/dist/model-viewer.js"
+    ></script>
+    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+  </head>
+  <body>
+    <header><%- include('../partials/header.ejs') %></header>
+    <model-viewer
+      src="damaged_glados.glb"
+      autoplay
+      animation-name="glados_model_v2|glados_congratulations_glados_model_v2"
+      ar
+      auto-rotate
+      interaction-prompt-threshold="1500"
+      enable-pan
+    ></model-viewer>
+  </body>
+</html>
