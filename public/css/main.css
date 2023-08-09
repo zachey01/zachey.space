@@ -221,7 +221,27 @@ body {
   }
 }
 
-model-viewer {
-  height: 500px;
-  height: 500px;
+main {
+  margin: 2em;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.main-avatar {
+  border-radius: 15px;
+  margin-bottom: 10px;
+  width: 12em;
+  height: 12em;
+}
+
+.main-title {
+  color: #000;
+  letter-spacing: -0.05em;
+  font-size: 170px;
+  font-family: Inter;
+  filter: url(#goof);
+  text-align: center;
+  margin-top: -90px;
 }

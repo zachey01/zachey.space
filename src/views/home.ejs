@@ -2,26 +2,54 @@
 <html lang="en">
   <head>
     <%- include('../partials/head.ejs') %>
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer@v0.5.0/dist/model-viewer.js"
-    ></script>
-    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+    <script src="/js/getGeo.js"></script>
+    <script src="/js/mainTitle.js" async></script>
   </head>
   <body>
     <header><%- include('../partials/header.ejs') %></header>
-    <model-viewer
-      src="damaged_glados.glb"
-      autoplay
-      animation-name="glados_model_v2|glados_congratulations_glados_model_v2"
-      ar
-      auto-rotate
-      interaction-prompt-threshold="1500"
-      enable-pan
-    ></model-viewer>
+    <main>
+      <div class="align-center">
+        <div class="main-title">zachey</div>
+
+        <svg
+          style="visibility: 'hidden'; position: 'absolute'"
+          width="0"
+          height="0"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+        >
+          <defs>
+            <filter id="goof">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="5"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -5"
+                result="goof2"
+              />
+              <feComposite in="SourceGraphic" in2="goof2" operator="atop" />
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.005"
+                numOctaves="3"
+                result="turbulence"
+              />
+              <feDisplacementMap
+                in2="turbulence"
+                in="goof2"
+                scale="100"
+                xChannelSelector="R"
+                yChannelSelector="B"
+              />
+            </filter>
+          </defs>
+        </svg>
+        <img src="/img/im.jpg" alt="" class="main-avatar" />
+      </div>
+    </main>
   </body>
 </html>
