@@ -230,10 +230,10 @@ main {
 }
 
 .main-avatar {
-  border-radius: 15px;
-  margin-bottom: 10px;
+  border-radius: 5px;
   width: 12em;
   height: 12em;
+  margin-left: 45%;
 }
 
 .main-title {
@@ -243,5 +243,10 @@ main {
   font-family: Inter;
   filter: url(#goof);
   text-align: center;
-  margin-top: -90px;
+  margin-top: -250px;
+  margin-left: 45%;
+}
+
+.d-inline {
+  display: inline;
 }
