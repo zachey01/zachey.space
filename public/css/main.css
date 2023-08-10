@@ -397,3 +397,28 @@ kbd {
 .subtitle {
   font-family: stencilove;
 }
+
+.blog-post {
+  padding: 1em;
+  margin: 1em;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  max-width: 50%;
+}
+
+.blog-post .tags {
+  color: #74ace0;
+  font-weight: 900;
+}
+
+.blog-post .title {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.blog-post .icon {
+  width: 20px;
+  height: 20px;
+  user-select: none;
+  margin-right: 5px;
+}

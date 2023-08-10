@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <style>
+      .content {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+    <header><%- include('../partials/header.ejs') %></header>
+    <main>
+      <script>
+        var converter = new showdown.Converter({ metadata: true });
+
+        function toggleContent(elementId) {
+          var content = document.getElementById(elementId);
+          if (content.style.display === "none") {
+            content.style.display = "block";
+          } else {
+            content.style.display = "none";
+          }
+        }
+      </script>
+      <% fileData.forEach(function(file, index) { %>
+      <div class="blog-post">
+        <h2 onclick="toggleContent('content<%= index %>')" class="title">
+          <script>
+            var html = converter.makeHtml(`<%= file.content %>`);
+            var metadata = converter.getMetadata();
+            document.write(metadata.title);
+          </script>
+        </h2>
+
+        <script>
+          var html = converter.makeHtml(`<%= file.content %>`);
+          var metadata = converter.getMetadata();
+          document.write(
+            `<img src="/img/icons/calendar.svg" alt="" class="icon"/>${metadata.data}`
+          );
+        </script>
+        <script>
+          var html = converter.makeHtml(`<%= file.content %>`);
+          var metadata = converter.getMetadata();
+          document.write(
+            `<p class="tags"><img src="/img/icons/tag.svg" alt="" class="icon"/>${metadata.tags}</p>` +
+              "<br>"
+          );
+        </script>
+        <div id="content<%= index %>" class="content">
+          <br />
+          <script>
+            var html = converter.makeHtml(`<%= file.content %>`);
+            document.write(html);
+          </script>
+        </div>
+      </div>
+      <% }); %>
+    </main>
+  </body>
+</html>
