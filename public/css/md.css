@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "Noto Sans";
-  src: url("/font/NotoSans-Medium.ttf");
-}
+@import url("./fonts.css");
 
 * {
   font-family: Noto Sans;

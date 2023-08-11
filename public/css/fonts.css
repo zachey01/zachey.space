@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "stencilove";
+  src: url("/font/StencilovePersonalUseRegular-WyerY.ttf");
+}
+
+@font-face {
+  font-family: "undertown";
+  src: url("/font/UndertownPersonalUseRegular-YzBmo.ttf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/font/NotoSans-Medium.ttf");
+}
