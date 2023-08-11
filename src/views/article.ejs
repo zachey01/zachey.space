@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+  </head>
+  <body>
+    <header><%- include('../partials/header.ejs') %></header>
+    <script src="/libs/showdown.min.js"></script>
+    <link rel="stylesheet" href="/css/md.css" />
+    <script>
+      var converter = new showdown.Converter({ metadata: true });
+      var html = converter.makeHtml(`<%= fileData.content %>`);
+      var metadata = converter.getMetadata();
+    </script>
+    <main>
+      <h1 class="blog-article__title">
+        <script>
+          document.write(metadata.title);
+        </script>
+      </h1>
+      <div class="content">
+        <script>
+          document.write(`${html}`);
+        </script>
+      </div>
+    </main>
+  </body>
+</html>

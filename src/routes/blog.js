@@ -78,4 +78,20 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/article/:name", (req, res) => {
+  const fileName = req.params.name;
+  const filePath = path.join("articles", fileName + ".md");
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      res.status(500).send("Error reading file");
+      return;
+    }
+
+    const fileData = { name: fileName, content: data };
+    res.render("article", { fileData });
+  });
+});
+
 module.exports = router;

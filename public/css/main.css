@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
-
 @font-face {
   font-family: "stencilove";
   src: url("/font/StencilovePersonalUseRegular-WyerY.ttf");
@@ -48,6 +46,7 @@
   --accent-blue: hsl(205, 100%, 48%);
   --text-primary: hsl(0, 0%, 0%);
   --text-accent: hsl(0, 0%, 49%);
+  --pane-color: #d6deff82;
 
   --header: 3.5rem;
   --full-width: 100%;
@@ -59,6 +58,12 @@
   --space-025: 0.25rem;
   --space-05: 0.5rem;
   --space-1: 1rem;
+
+  --fz-h1: 36px;
+  --fz-h2: 28px;
+  --fz-h3: 24px;
+  --fz-text: 16px;
+  --fz-desc: 12px;
 }
 
 a {
@@ -398,12 +403,17 @@ kbd {
   font-family: stencilove;
 }
 
+.blog-article__title {
+  font: 400 16px/1.4 "Noto Sans";
+  font-size: 30px;
+}
+
 .blog-post {
   padding: 1em;
   margin: 1em;
-  border: 2px solid #ccc;
-  border-radius: 10px;
   max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blog-post .tags {
@@ -416,9 +426,30 @@ kbd {
   margin-bottom: 10px;
 }
 
+.blog-post .title a {
+  color: var(--text-primary);
+}
+
 .blog-post .icon {
   width: 20px;
   height: 20px;
   user-select: none;
   margin-right: 5px;
+}
+
+.blog-post__tag {
+  margin: 0 8px 0 0;
+  padding: 4px 8px;
+  font-size: var(--fz-desc);
+  background-color: var(--pane-color);
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.blog-post__tag:last-child {
+  margin-right: 0;
+}
+
+.user-s__none {
+  user-select: none;
 }
