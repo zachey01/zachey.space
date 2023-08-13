@@ -8,7 +8,13 @@
     <header><%- include('../partials/header.ejs') %></header>
     <main>
       <div class="align-center">
-        <img src="/img/im.webp" alt="" class="main-avatar" />
+        <img
+          src="/img/im.webp"
+          alt=""
+          class="main-avatar"
+          onmouseover="this.src='/img/im_pixel.webp'"
+          onmouseout="this.src='/img/im.webp'"
+        />
 
         <div class="main-title">zachey</div>
         <svg
