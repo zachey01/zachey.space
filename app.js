@@ -1,4 +1,5 @@
 const express = require("express");
+const compression = require("compression");
 const ejs = require("ejs");
 require("dotenv").config();
 const app = express();
@@ -12,6 +13,7 @@ const contactsRoute = require("./src/routes/contacts");
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 app.use(express.static("public"));
+app.use(compression());
 
 app.use("/", homeRoute);
 app.use("/blog", blogRoute);

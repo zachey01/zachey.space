@@ -539,3 +539,12 @@ kbd {
   stroke-dashoffset: 100;
   transition: 0.6s ease-out;
 }
+
+.contacts-icon {
+  height: 50px;
+  transition: filter 0.3s ease;
+}
+
+.contacts-icon:hover {
+  filter: drop-shadow(5px 0 0 #6393c1) drop-shadow(0 5px 0 #6393c1);
+}
