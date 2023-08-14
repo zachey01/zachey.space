@@ -1,9 +1,8 @@
 const express = require("express");
 const compression = require("compression");
 const ejs = require("ejs");
-require("dotenv").config();
 const app = express();
-const env = process.env;
+let port = 3000;
 
 const homeRoute = require("./src/routes/home");
 const blogRoute = require("./src/routes/blog");
@@ -20,6 +19,6 @@ app.use("/blog", blogRoute);
 app.use("/projects", projectsRoute);
 app.use("/contacts", contactsRoute);
 
-app.listen(env.port, () => {
-  console.log(`App listening on port ${env.port}`);
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
 });
