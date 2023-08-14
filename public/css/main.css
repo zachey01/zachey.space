@@ -180,53 +180,6 @@ body {
   color: var(--text-accent);
 }
 
-@media (max-width: 575px) {
-  .header-content--left {
-    justify-content: space-between;
-  }
-
-  .header-content--right {
-    height: auto;
-  }
-
-  .nav-toggle {
-    visibility: visible;
-  }
-
-  .nav__list {
-    right: 0;
-    margin-inline: var(--space-1);
-    top: calc(50% + var(--space-1) * 2);
-    gap: var(--space-05) 0;
-    position: fixed;
-    width: 10em;
-    background-color: #fff;
-    border-radius: var(--bd-radius);
-    border: 1px solid var(--border-clr);
-    padding-block: 0.5rem;
-    grid-auto-flow: row;
-    box-shadow: var(--shadow);
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  .nav__list[aria-expanded="true"] {
-    visibility: visible;
-    transform-origin: top center;
-    opacity: 1;
-    transition: visibility 0ms, transform 166ms ease, opacity 166ms linear;
-  }
-}
-
-@media (max-width: 479px) {
-  .header-content--left > * {
-    scale: 0.83;
-  }
-  .nav__list {
-    width: calc(var(--full-width) - (var(--space-1) * 2));
-  }
-}
-
 main {
   margin: 2em;
 }
@@ -547,4 +500,83 @@ kbd {
 
 .contacts-icon:hover {
   filter: drop-shadow(5px 0 0 #6393c1) drop-shadow(0 5px 0 #6393c1);
+}
+
+@media (max-width: 400px) {
+  .main-title {
+    margin-top: -170px;
+    font-size: 120px;
+    letter-spacing: 0;
+  }
+
+  .main-subtitle {
+    margin-top: -15px;
+  }
+}
+
+@media (max-width: 710px) {
+  .main-title {
+    font-size: 210px;
+  }
+
+  .main-subtitle {
+    margin-top: -35px;
+  }
+
+  .card-container {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
+
+  .card:not(:first-child) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 536px) {
+  .main-title {
+    font-size: 150px;
+  }
+
+  .main-subtitle {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 444px) {
+  .card {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .main-title {
+    font-size: 100px;
+    letter-spacing: 3.5px;
+  }
+
+  .main-subtitle {
+    margin-top: 20px;
+  }
+
+  .nav__link {
+    min-width: 9.5ch;
+  }
+
+  .wrapper {
+    height: 370px;
+  }
+
+  .card {
+    display: block;
+    text-align: center;
+  }
 }
