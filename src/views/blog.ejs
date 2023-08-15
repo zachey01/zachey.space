@@ -19,9 +19,9 @@
         var html = converter.makeHtml(`<%= file.content %>`);
         var metadata = converter.getMetadata();
 
-        let tags = metadata.tags.split(",");
-        let date = metadata.data;
-        let description = metadata.description;
+        var tags = metadata.tags.split(",");
+        var date = metadata.data;
+        var description = metadata.description;
         function toggleContent(elementId) {
           var content = document.getElementById(elementId);
           if (content.style.display === "none") {
