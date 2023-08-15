@@ -12,3 +12,8 @@
   font-family: "Noto Sans";
   src: url("/font/NotoSans-Medium.ttf");
 }
+
+@font-face {
+  font-family: "JetBrainsMono Light";
+  src: url("/font/JetBrainsMono-Light.ttf");
+}

@@ -580,3 +580,9 @@ kbd {
     text-align: center;
   }
 }
+
+.hljs {
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: JetBrainsMono Light;
+}
