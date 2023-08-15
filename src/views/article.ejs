@@ -6,10 +6,30 @@
   <body>
     <header><%- include('../partials/header.ejs') %></header>
     <script src="/libs/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <link rel="stylesheet" href="/css/md.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css"
+    />
     <script>
-      var converter = new showdown.Converter({ metadata: true });
+      hljs.highlightAll();
+    </script>
+
+    <script>
+      var converter = new showdown.Converter({
+        metadata: true,
+        omitExtraWLInCodeBlocks: true,
+        customizedHeaderId: true,
+      });
+
       var html = converter.makeHtml(`<%= fileData.content %>`);
+      html = html.replace(/&lt;code&gt;/g, '<code class="hljs">');
+      html = html.replace(/&lt;\/code&gt;/g, "</code>");
+      html = html.replace(/&lt;pre&gt;/g, '<pre class="hljs">');
+      html = html.replace(/&lt;\/pre&gt;/g, "</pre>");
+      html = html.replace(/&lt;kbd&gt;/g, "<kbd>");
+      html = html.replace(/&lt;\/kbd&gt;/g, "</kbd>");
       var metadata = converter.getMetadata();
     </script>
     <main>
@@ -20,7 +40,7 @@
       </h1>
       <div class="content">
         <script>
-          document.write(`${html}`);
+          document.write(html);
         </script>
       </div>
     </main>
