@@ -7,7 +7,7 @@ description: Various ways to render BSP maps in the browser...
 
 ### Introduction
 
-Recently to me for my previous [project](https://github.com/zachey01/MimiCMS) it was necessary to render the BSP map in the browser, or rather on the map preview page. At that time, there was already a [solution] (https://github.com/MDFL64/vbsp .js) of this problem.
+Recently to me for my previous [project](https://github.com/zachey01/MimiCMS) it was necessary to render the BSP map in the browser, or rather on the map preview page. At that time, there was already a [solution] (https://github.com/MDFL64/vbsp.js) of this problem.
 
 #### [VBsp.JS](https://github.com/MDFL64/vbsp.js)
 

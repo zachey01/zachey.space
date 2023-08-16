@@ -1,9 +1,11 @@
 const express = require("express");
 const compression = require("compression");
+const https = require("https");
+const fs = require("fs");
 const ejs = require("ejs");
 const app = express();
 
-let port = 80;
+let port = 443;
 
 let homeRoute = require("./src/routes/home");
 let blogRoute = require("./src/routes/blog");
@@ -12,7 +14,7 @@ let contactsRoute = require("./src/routes/contacts");
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
-app.use(express.static("public"));
+app.use(express.static("public", { dotfiles: "allow" }));
 app.use(compression());
 
 app.use("/", homeRoute);
@@ -20,6 +22,12 @@ app.use("/blog", blogRoute);
 app.use("/projects", projectsRoute);
 app.use("/contacts", contactsRoute);
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
+https
+  .createServer(
+    {
+      cert: fs.readFileSync("/etc/letsencrypt/live/zachey.space/fullchain.pem"),
+      key: fs.readFileSync("/etc/letsencrypt/live/zachey.space/privkey.pem"),
+    },
+    app
+  )
+  .listen(port);

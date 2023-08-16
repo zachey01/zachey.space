@@ -1,0 +1,22 @@
+[
+  {
+    "name": "MimiCMS",
+    "description": "Wonderful CMS for Valve Game Servers",
+    "link": "https://github.com/zachey01/MimiCMS"
+  },
+  {
+    "name": "noisyJS",
+    "description": "Random internet traffic noise generator",
+    "link": "https://github.com/zachey01/noisyJS"
+  },
+    {
+    "name": "terminalPortfolio",
+    "description": "A personal website styled for UNIX terminal",
+    "link": "https://github.com/zachey01/terminalPortfolio"
+  },
+  {
+    "name": "NSWFparse",
+    "description": "NSWF parser for Reddit",
+    "link": "https://github.com/zachey01/NSWFparse"
+  }
+]
