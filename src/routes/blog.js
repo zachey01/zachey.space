@@ -90,7 +90,6 @@ router.get("/article/:name", (req, res) => {
     }
 
     const fileData = { name: fileName, content: data };
-    console.log(fileData);
     res.render("article", { fileData });
   });
 });
