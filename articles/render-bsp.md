@@ -1,31 +1,31 @@
 ---
 data: 2023-08-15
-title: Рендеринг BSP карт в браузере
+title: Rendering BSP maps in the browser
 tags: Source Engine, Blender, 3D, HTML
-description: Различные способы рендеринга BSP карт в браузере...
+description: Various ways to render BSP maps in the browser...
 ---
 
-### Введение
+### Introduction
 
-Недавно мне для моего предыдущего [проекта](https://github.com/zachey01/MimiCMS) понадобилось рендерить BSP карту в браузере, а точнее на странице предпросмотра карты. На тот момент уже существовало [решение](https://github.com/MDFL64/vbsp.js) этой проблемы.
+Recently to me for my previous [project](https://github.com/zachey01/MimiCMS) it was necessary to render the BSP map in the browser, or rather on the map preview page. At that time, there was already a [solution] (https://github.com/MDFL64/vbsp .js) of this problem.
 
 #### [VBsp.JS](https://github.com/MDFL64/vbsp.js)
 
-У этого способа много плюсов:
+This method has many advantages:
 
-- работает везде (Firefox, Chrome, Safari и т.д.);
-- не лагает;
-- легкий в использовании;
-- работает почти со всеми версиями BSP.
+- works everywhere (Firefox, Chrome, Safari, etc.);
+- does not lag;
+- easy to use;
+- works with almost all BSP versions.
 
-Но есть и существенные минусы:
+But there are also significant disadvantages:
 
-- сложно добавить свои текстуры и модели;
-- мноооого багов;
-- не работает на мобильных устройствах;
-- текстуры не детализированные.
+- it's difficult to add your own textures and models;
+- many bugs;
+- does not work on mobile devices;
+- textures are not detailed.
 
-##### Использование
+##### Usage
 
 [Download](/blog/render-bsp/VBsp-demo.zip)
 
@@ -47,35 +47,35 @@ map.initRenderer(document.getElementById("render"));
 
 #### [ModelViewer](https://modelviewer.dev) + [Blender](https://www.blender.org/)
 
-<kbd>Минусы</kbd>:
+<kbd>Cons</kbd>:
 
-- ооочень долго загружается
-- сложно
-- требует много места на сервере
-- если карта большая, то такой способ не подходит
+- sooo long to load
+- difficult
+- requires a lot of space on the server
+- if the card is large, then this method is not suitable
 
-<kbd>Плюсы</kbd>:
+<kbd>Advantages</kbd>:
 
-- работает везде
-- карта
+- works everywhere
+- map
 
-##### Использование
+##### Usage
 
-###### Установка
+###### Installation
 
-1. Установка Blender и Java
-2. Установка аддонов в Blender:
+1. Installing Blender and Java
+2. Installing addons in Blender:
 
-   ![](/blog/render-bsp/blender-addon1.png)
-   Нажмите Install и выберите скачанный архив и включите аддон, тоже самое сделайте с вторым аддоном
-   ![](/blog/render-bsp/blender-addon2.png)
+![](/blog/render-bsp/blender-addon1.png)
+Click Install and select the downloaded archive and enable the addon, do the same with the second addon
+![](/blog/render-bsp/blender-addon2.png)
 
-3. Импортируйте VMF из меню : <kbd>Import/Plumber/.vmf</kbd>
-4. Установите skybox выделив его и нажав на <kbd>Object/Transform VMF 3D sky</kbd>
-   > Переключить шейдеры можно => ![](/blog/render-bsp/blender-addon3.png)
+3. Import VMF from the menu: <kbd>Import/Plumber/.vmf</kbd>
+4. Install skybox by selecting it and clicking on <kbd>Object/Transform VMF 3D sky</kbd>
+   > You can switch shaders => ![](/blog/render-bsp/blender-addon3.png)
 
-**Результат:**
+**Result:**
 
 ![Blender Result](/blog/render-bsp/blender-result.jpg =720x400)
 
-###### Интеграция на сайт
+4. And then through export to .GLB and add to the site via ModelViewer or Three.JS
