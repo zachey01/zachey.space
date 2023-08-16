@@ -2,7 +2,7 @@ const express = require("express");
 const https = require("https");
 const router = express.Router();
 
-let url = "https://zachey01.github.io/projects.json";
+let url = "https://cdn.zachey.space/projects.json";
 
 https
   .get(url, (res) => {
