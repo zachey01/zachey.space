@@ -1,10 +1,10 @@
 const express = require("express");
-const https = require("https");
+const http = require("http");
 const router = express.Router();
 
-let url = "https://zachey.space/projects.json";
+let url = "http://localhost/projects.json";
 
-https
+http
   .get(url, (res) => {
     let body = "";
 

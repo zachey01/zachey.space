@@ -19,7 +19,17 @@
             <a href="<%= project.link %>"
               ><h3 class="card-title"><%= project.name %></h3></a
             >
-            <div class="bar"><%= project.description %></div>
+            <div class="bar">
+              <script>
+                if (translateText.lang === "ru") {
+                  document.write(`<%= project.description.ru %>`);
+                } else if (translateText.lang === "ua") {
+                  document.write(`<%= project.description.ua %>`);
+                } else {
+                  document.write(`<%= project.description.en %>`);
+                }
+              </script>
+            </div>
           </div>
           <% }); %>
         </div>
