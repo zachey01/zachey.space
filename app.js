@@ -3,7 +3,7 @@ const compression = require("compression");
 const ejs = require("ejs");
 const app = express();
 
-let port = 3000;
+let port = 80;
 
 let homeRoute = require("./src/routes/home");
 let blogRoute = require("./src/routes/blog");
