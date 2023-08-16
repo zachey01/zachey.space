@@ -5,8 +5,6 @@ const fs = require("fs");
 const ejs = require("ejs");
 const app = express();
 
-let port = 443;
-
 let homeRoute = require("./src/routes/home");
 let blogRoute = require("./src/routes/blog");
 let projectsRoute = require("./src/routes/projects");
@@ -22,6 +20,7 @@ app.use("/blog", blogRoute);
 app.use("/projects", projectsRoute);
 app.use("/contacts", contactsRoute);
 
+app.listen(80);
 https
   .createServer(
     {
@@ -30,4 +29,4 @@ https
     },
     app
   )
-  .listen(port);
+  .listen(443);
