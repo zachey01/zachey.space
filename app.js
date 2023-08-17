@@ -9,6 +9,7 @@ let homeRoute = require("./src/routes/home");
 let blogRoute = require("./src/routes/blog");
 let projectsRoute = require("./src/routes/projects");
 let contactsRoute = require("./src/routes/contacts");
+let donateRoute = require("./src/routes/donate");
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
@@ -19,6 +20,7 @@ app.use("/", homeRoute);
 app.use("/blog", blogRoute);
 app.use("/projects", projectsRoute);
 app.use("/contacts", contactsRoute);
+app.use("/donate", donateRoute);
 
 app.listen(80);
 https
