@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MimiCMS</title>
-    <link rel="stylesheet" href="/mimicms/css/main.css" />
+    <link rel="stylesheet" href="/css/mimicms.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -23,30 +23,30 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/mimicms/img/apple-touch-icon.png"
+      href="/img/favicons/mimicms/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/mimicms/img/favicon-32x32.png"
+      href="/img/favicons/mimicms/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/mimicms/img/favicon-16x16.png"
+      href="/img/favicons/mimicms/favicon-16x16.png"
     />
-    <link rel="manifest" href="/mimicms/img/site.webmanifest" />
+    <link rel="manifest" href="/img/favicons/mimicms/site.webmanifest" />
     <link
       rel="mask-icon"
-      href="/mimicms/img/safari-pinned-tab.svg"
+      href="/img/favicons/mimicms/safari-pinned-tab.svg"
       color="#5bbad5"
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
-    <script src="/mimicms/js/gen.js" async></script>
+    <script src="/js/mimicms-installer.js" async></script>
   </head>
   <body>
     <header>
@@ -61,7 +61,7 @@
       <section id="landing-section">
         <img
           class="column_1 user-select-none pe-none"
-          src="/mimicms/img/hero-image.svg"
+          src="/img/hero-image.svg"
           alt="Hero image"
         />
 
@@ -148,6 +148,32 @@
                   id=""
                 />
                 <input type="text" placeholder="Domain" name="Domain" id="" />
+                <h5>
+                  Do you want to host the CMS for free (with your own domain or
+                  free domain)?
+                </h5>
+                <ul class="i-radio">
+                  <li>
+                    <input
+                      type="radio"
+                      value="yes"
+                      name="option"
+                      id="yes"
+                      onclick="freeHosting()"
+                    />
+                    <label for="yes">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      value="no"
+                      name="option"
+                      id="no"
+                      onclick="selfHosting()"
+                    />
+                    <label for="no">No</label>
+                  </li>
+                </ul>
                 <h4>MYSQL database</h4>
                 <input
                   type="text"
@@ -174,21 +200,6 @@
                   name="RCONpassword"
                   id=""
                 />
-
-                <h5>
-                  Do you want to host the CMS for free (with your own domain or
-                  free domain)?
-                </h5>
-                <ul class="i-radio">
-                  <li>
-                    <input type="radio" value="yes" name="option" id="yes" />
-                    <label for="yes">Yes</label>
-                  </li>
-                  <li>
-                    <input type="radio" value="no" name="option" id="no" />
-                    <label for="no">No</label>
-                  </li>
-                </ul>
               </div>
 
               <button class="button">
