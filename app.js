@@ -4,6 +4,7 @@ const subdomain = require("express-subdomain");
 const https = require("https");
 const fs = require("fs");
 const ejs = require("ejs");
+const cors = require("cors");
 const path = require("path");
 const app = express();
 
@@ -13,13 +14,16 @@ let projectsRoute = require("./src/routes/projects");
 let contactsRoute = require("./src/routes/contacts");
 let donateRoute = require("./src/routes/donate");
 let mimicmsSubDomain = require("./src/routes/mimicms");
+let apiSubDomain = require("./src/routes/api");
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 app.use(express.static("public", { dotfiles: "allow" }));
 app.use(compression());
+app.use(cors());
 
 app.use(subdomain("mimicms", mimicmsSubDomain));
+app.use(subdomain("api", apiSubDomain));
 
 app.use("/", homeRoute);
 app.use("/blog", blogRoute);
