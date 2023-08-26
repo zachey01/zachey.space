@@ -22,7 +22,7 @@
 
 `api.` - API for updates
 
-## Installation
+## Installation and running
 
 ```
 git clone https://github.com/zachey01/zachey.space && cd zachey.space && npm i && node .
