@@ -2,9 +2,8 @@
 
 > Modern personal website with blog and more features!
 
-[Demo](https://zachey.space/)
-
-![](https://zachey01.github.io/img/zachey.space.png)
+[![](https://image.thum.io/get/maxAge/12/width/700/http://zachey.space/)
+](https://zachey.space/)
 
 ## Installation
 
