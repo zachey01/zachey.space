@@ -15,6 +15,7 @@ let contactsRoute = require("./src/routes/contacts");
 let donateRoute = require("./src/routes/donate");
 let mimicmsSubDomain = require("./src/routes/mimicms");
 let apiSubDomain = require("./src/routes/api");
+let placeholderSubDomain = require("./src/routes/placeholder");
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
@@ -24,6 +25,7 @@ app.use(cors());
 
 app.use(subdomain("mimicms", mimicmsSubDomain));
 app.use(subdomain("api", apiSubDomain));
+app.use(subdomain("placeholder", placeholderSubDomain));
 
 app.use("/", homeRoute);
 app.use("/blog", blogRoute);
