@@ -2,8 +2,8 @@
 
 > Modern personal website with blog and more features!
 
-[![](https://image.thum.io/get/maxAge/12/width/700/http://zachey.space/)
-](https://zachey.space/)
+<p style="text-align:center"><a href="https://zachey.space/"><img src="https://image.thum.io/get/maxAge/12/width/700/http://zachey.space/" alt="">
+</a></p>
 
 ## Installation
 
