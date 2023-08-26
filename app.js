@@ -32,16 +32,16 @@ app.use("/contacts", contactsRoute);
 app.use("/donate", donateRoute);
 
 app.listen(80);
-https
-  .createServer(
-    {
-      cert: fs.readFileSync(
-        "/etc/letsencrypt/live/zachey.space-0001/fullchain.pem"
-      ),
-      key: fs.readFileSync(
-        "/etc/letsencrypt/live/zachey.space-0001/privkey.pem"
-      ),
-    },
-    app
-  )
-  .listen(443);
+// https
+//   .createServer(
+//     {
+//       cert: fs.readFileSync(
+//         "/etc/letsencrypt/live/zachey.space-0001/fullchain.pem"
+//       ),
+//       key: fs.readFileSync(
+//         "/etc/letsencrypt/live/zachey.space-0001/privkey.pem"
+//       ),
+//     },
+//     app
+//   )
+//   .listen(443);
