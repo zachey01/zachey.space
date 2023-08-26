@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const request = require("request");
+const cheerio = require("cheerio");
 
 const versionsJson = {
   MimiCMS: {
@@ -19,6 +21,39 @@ const versionsJson = {
     },
   },
 };
+
+function workshopparser(userId, res) {
+  const MainUrl = `https://steamcommunity.com/profiles/${userId}/myworkshopfiles/`; // URL страницы с работами пользователя
+
+  request(MainUrl, (error, response, html) => {
+    if (!error && response.statusCode == 200) {
+      const $ = cheerio.load(html); // загружаем HTML-код страницы в Cheerio
+      const worksList = $(".workshopItem"); // находим список работ пользователя
+      const worksData = []; // массив для хранения данных о работах
+
+      worksList.each((index, element, link) => {
+        const workTitle = $(element).find(".workshopItemTitle").text(); // название работы
+        const workImg = $(element)
+          .find(".workshopItemPreviewImage")
+          .attr("src");
+        const workId = $(".workshopItemPreviewHolder").attr();
+
+        let workIdnum = workId.id.replace(/\D/g, "");
+
+        // сохраняем данные о работе в объект и добавляем его в массив
+        const workData = {
+          title: workTitle,
+          image: workImg,
+          id: workIdnum,
+        };
+        if (workImg) {
+          worksData.push(workData);
+        }
+      });
+      res.json(worksData);
+    }
+  });
+}
 
 router.get("/v/:name", (req, res) => {
   const name = req.params.name;
@@ -47,6 +82,10 @@ router.get("/v/:name/:yourVersion", (req, res) => {
   } else {
     res.json({ error: "Name not found" });
   }
+});
+
+router.get("/steamworkshop/:steamid", (req, res) => {
+  workshopparser(`${req.params.steamid}`, res);
 });
 
 module.exports = router;
