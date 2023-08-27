@@ -16,11 +16,17 @@
 
 **Subdomains**
 
-`placeholder.` - Placeholders for testing
+`placeholder.` - Placeholders:
+- `/p` - Default placeholder
+- `/anime` - Anime placeholder
+- `/avatar` - Anime avatar 
+- `/anime-nswf` - Anime NSWF placeholder
 
 `mimicms.` - Installer and website for [MimiCMS](https://github.com/zachey01/mimicms)
 
-`api.` - API for updates
+`api.` - API:
+- `/v/name/version`
+- `/steamworkshop/steamid`
 
 ## Installation and running
 
