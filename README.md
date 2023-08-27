@@ -28,7 +28,7 @@
 git clone https://github.com/zachey01/zachey.space && cd zachey.space && npm install --production && node .
 ```
 
-Run on VPS/VDS - `npm i pm2 && pm2 start app.js`
+Run on VPS/VDS - `npm i pm2 -g && pm2 start app.js`
 
 ---
 
