@@ -314,7 +314,7 @@ kbd {
   width: 85%;
 }
 #ts:checked ~ div > .side__fill {
-  width: 50%;
+  width: 30%;
 }
 #html:checked ~ div > .side__fill {
   width: 100%;
@@ -399,6 +399,85 @@ kbd {
   filter: drop-shadow(5px 0 0 #6393c1) drop-shadow(0 5px 0 #6393c1);
 }
 
+.hljs {
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: JetBrainsMono Light;
+}
+
+.project-card {
+  border-radius: 10px;
+  border: #121212 1px solid;
+  margin: 10px;
+  padding: 10px;
+  width: 20em;
+}
+
+.card-container {
+  display: table;
+  margin: auto;
+}
+
+.project-card__title {
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.skill-main {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  display: none;
+}
+.skill-main .skill-wrrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skill-main .skill-wrrap .skill-name {
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+}
+.skill-main .skill-wrrap .skill-bar {
+  height: 20px;
+  background-color: #00283a;
+  border-radius: 8px;
+}
+.skill-main .skill-wrrap .skill-per {
+  height: 20px;
+  background: #23576f;
+  border-radius: 8px;
+  width: 0;
+  transition: 1s linear;
+  position: relative;
+}
+.skill-main .skill-wrrap .skill-per:before {
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background-color: #23576f;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 4px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+.skill-main .skill-wrrap .skill-per:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #23576f;
+  top: -20px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 2px;
+}
+
 @media (max-width: 400px) {
   .main-title {
     margin-top: -170px;
@@ -418,11 +497,6 @@ kbd {
 
   .main-subtitle {
     margin-top: -35px;
-  }
-
-  .card-container {
-    display: inline-block;
-    text-align: center;
   }
 
   .card {
@@ -471,6 +545,12 @@ kbd {
   }
 }
 
+@media (hover: none) {
+  *:hover {
+    transform: none;
+  }
+}
+
 @media (max-width: 390px) {
   .main-title {
     font-size: 100px;
@@ -494,37 +574,16 @@ kbd {
     text-align: center;
   }
 
+  .project-card {
+    width: 90%;
+  }
+
   .progressbar {
-    margin-top: 50px;
+    display: none;
   }
-}
 
-@media (hover: none) {
-  *:hover {
-    transform: none;
+  .skill-main {
+    display: flex;
+    margin-top: -150px;
   }
-}
-
-.hljs {
-  border-radius: 10px;
-  font-size: 15px;
-  font-family: JetBrainsMono Light;
-}
-
-.project-card {
-  border-radius: 10px;
-  border: #121212 1px solid;
-  margin: 10px;
-  padding: 10px;
-  width: 20em;
-}
-
-.card-container {
-  display: table;
-  margin: auto;
-}
-
-.project-card__title {
-  color: #000;
-  margin-bottom: 10px;
 }
