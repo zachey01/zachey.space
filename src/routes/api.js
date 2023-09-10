@@ -23,16 +23,16 @@ const versionsJson = {
 };
 
 function workshopparser(userId, res) {
-  const MainUrl = `https://steamcommunity.com/profiles/${userId}/myworkshopfiles/`; // URL страницы с работами пользователя
+  const MainUrl = `https://steamcommunity.com/profiles/${userId}/myworkshopfiles/`;
 
   request(MainUrl, (error, response, html) => {
     if (!error && response.statusCode == 200) {
-      const $ = cheerio.load(html); // загружаем HTML-код страницы в Cheerio
-      const worksList = $(".workshopItem"); // находим список работ пользователя
-      const worksData = []; // массив для хранения данных о работах
+      const $ = cheerio.load(html);
+      const worksList = $(".workshopItem");
+      const worksData = [];
 
       worksList.each((index, element, link) => {
-        const workTitle = $(element).find(".workshopItemTitle").text(); // название работы
+        const workTitle = $(element).find(".workshopItemTitle").text();
         const workImg = $(element)
           .find(".workshopItemPreviewImage")
           .attr("src");
@@ -40,7 +40,6 @@ function workshopparser(userId, res) {
 
         let workIdnum = workId.id.replace(/\D/g, "");
 
-        // сохраняем данные о работе в объект и добавляем его в массив
         const workData = {
           title: workTitle,
           image: workImg,
