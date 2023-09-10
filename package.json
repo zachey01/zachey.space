@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/zachey01/zachey.space/issues"
   },
-  "homepage": "https://zachey.space",
+  "homepage": "https://www.zachey.space",
   "dependencies": {
     "compression": "^1.7.4",
     "cors": "^2.8.5",
