@@ -1,1 +1,5 @@
-mimicms
+node_modules
+backup
+*.log
+dist/*
+src/config/config.js
