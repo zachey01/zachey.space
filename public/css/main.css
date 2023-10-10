@@ -239,7 +239,8 @@ kbd {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  margin-top: 300px;
+  margin-bottom: -200px;
 }
 .progressbar {
   height: 50px;
@@ -551,7 +552,7 @@ kbd {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 638px) {
   .main-title {
     font-size: 100px;
     letter-spacing: 3.5px;
@@ -586,4 +587,12 @@ kbd {
     display: flex;
     margin-top: -150px;
   }
+}
+
+.social-btn {
+  text-align: center;
+}
+
+.social-btn a {
+  margin: 10px;
 }

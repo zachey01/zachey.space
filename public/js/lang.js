@@ -5,7 +5,7 @@ let translateText;
 if (lang === "ru-RU" || lang === "ru") {
   translateText = {
     mainSubtitle:
-      "Фуллстэк разработчик, веб дизайнер, разработчик Telegram ботов",
+      "Фуллстэк разработчик, веб дизайнер, Source Engine mapper, 3D Художник",
     skills: "Скиллы",
     home: "Главная",
     blog: "Блог",
@@ -15,7 +15,8 @@ if (lang === "ru-RU" || lang === "ru") {
   };
 } else if (lang === "uk-UK" || lang === "uk") {
   translateText = {
-    mainSubtitle: "Фулстек розробник, вебдизайнер, розробник Telegram-ботів",
+    mainSubtitle:
+      "Фулстек розробник, веб дизайнер, Source Engine mapper, 3D Художник",
     skills: "Скіли",
     home: "Головна",
     blog: "Блог",
@@ -25,7 +26,8 @@ if (lang === "ru-RU" || lang === "ru") {
   };
 } else {
   translateText = {
-    mainSubtitle: "Fullstack developer, web designer, Telegram bot developer",
+    mainSubtitle:
+      "Fullstack Developer, Web Designer, Source Engine mapper, 3D Artist",
     skills: "Skills",
     home: "Home",
     blog: "Blog",

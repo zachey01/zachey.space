@@ -11,7 +11,6 @@ const app = express();
 let homeRoute = require("./src/routes/home");
 let blogRoute = require("./src/routes/blog");
 let projectsRoute = require("./src/routes/projects");
-let contactsRoute = require("./src/routes/contacts");
 let donateRoute = require("./src/routes/donate");
 let apiSubDomain = require("./src/routes/api");
 let placeholderSubDomain = require("./src/routes/placeholder");
@@ -28,7 +27,6 @@ app.use(subdomain("placeholder", placeholderSubDomain));
 app.use("/", homeRoute);
 app.use("/blog", blogRoute);
 app.use("/projects", projectsRoute);
-app.use("/contacts", contactsRoute);
 app.use("/donate", donateRoute);
 
 app.listen(80);
