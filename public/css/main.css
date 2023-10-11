@@ -412,6 +412,20 @@ kbd {
   margin: 10px;
   padding: 10px;
   width: 20em;
+  filter: drop-shadow(12px 23px 12px #d88bf4);
+  transform: rotate3d(2, 1, 1, 0.83turn);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate3d(2, 1, 1, 0.83turn);
+  }
+  to {
+    transform: rotate3d(2, 1, 1, 1turn);
+  }
+}
+.project-card:hover {
+  animation: rotate 1s linear;
 }
 
 .card-container {
