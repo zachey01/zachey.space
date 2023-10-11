@@ -1,5 +1,7 @@
 const express = require("express");
 const compression = require("compression");
+const minify = require("express-minify");
+const minifyHTML = require("express-minify-html");
 const subdomain = require("express-subdomain");
 const https = require("https");
 const fs = require("fs");
@@ -20,6 +22,21 @@ app.set("views", "./src/views");
 app.use(express.static("public", { dotfiles: "allow" }));
 app.use(compression());
 app.use(cors());
+app.use(minify());
+app.use(
+  minifyHTML({
+    override: true,
+    exception_url: false,
+    htmlMinifier: {
+      removeComments: true,
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true,
+      minifyJS: true,
+    },
+  })
+);
 
 app.use(subdomain("api", apiSubDomain));
 app.use(subdomain("placeholder", placeholderSubDomain));
