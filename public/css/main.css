@@ -394,10 +394,13 @@ kbd {
 .contacts-icon {
   height: 35px;
   transition: filter 0.3s ease;
+  filter: invert(54%) sepia(92%) saturate(1125%) hue-rotate(193deg)
+    brightness(95%) contrast(96%);
 }
 
 .contacts-icon:hover {
-  filter: drop-shadow(5px 0 0 #6393c1) drop-shadow(0 5px 0 #6393c1);
+  filter: invert(54%) sepia(92%) saturate(1125%) hue-rotate(193deg)
+    brightness(95%) contrast(96%) blur(2px);
 }
 
 .hljs {
