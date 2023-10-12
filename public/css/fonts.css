@@ -1,19 +1,14 @@
 @font-face {
-  font-family: "stencilove";
-  src: url("/font/Panton-LightCaps.otf");
+  font-family: "PublicPixel";
+  src: url("/font/PublicPixel.ttf");
 }
 
 @font-face {
-  font-family: "undertown";
-  src: url("/font/UndertownPersonalUseRegular-YzBmo.ttf");
+  font-family: "SummerPixel";
+  src: url("/font/SummerPixel.ttf");
 }
 
 @font-face {
-  font-family: "Noto Sans";
-  src: url("/font/NotoSans-Medium.ttf");
-}
-
-@font-face {
-  font-family: "JetBrainsMono Light";
-  src: url("/font/JetBrainsMono-Light.ttf");
+  font-family: "PressStart2P";
+  src: url("/font/PressStart2P.ttf");
 }

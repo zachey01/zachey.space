@@ -61,7 +61,7 @@ body {
   display: flex;
   flex-flow: column;
   min-block-size: 100vh;
-  font: 400 16px/1.4 "Noto Sans";
+  font: 400 16px/1.4 "PressStart2P";
 }
 
 .container {
@@ -297,7 +297,7 @@ kbd {
   background-color: rgba(0, 124, 255, 0.34);
   cursor: pointer;
   margin-right: 17px;
-  font-family: undertown;
+  font-family: SummerPixel;
   color: white;
   border-radius: 5px;
   box-shadow: 1px -2px 0px 0px rgba(0, 124, 255, 0.34),
@@ -333,15 +333,15 @@ kbd {
 
 .main-subtitle {
   margin-top: -90px;
-  font-family: stencilove;
+  font-family: PublicPixel;
 }
 
 .subtitle {
-  font-family: stencilove;
+  font-family: PublicPixel;
 }
 
 .blog-article__title {
-  font: 400 16px/1.4 "Noto Sans";
+  font: 400 16px/1.4 "PressStart2P";
   font-size: 30px;
 }
 
@@ -414,7 +414,7 @@ kbd {
   border: #121212 1px solid;
   margin: 10px;
   padding: 10px;
-  width: 20em;
+  width: 23em;
   filter: drop-shadow(12px 23px 12px #d88bf4);
   transform: rotate3d(2, 1, 1, 0.83turn);
 }
