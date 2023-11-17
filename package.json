@@ -33,7 +33,7 @@
     "express-subdomain": "^1.0.5",
     "request": "^2.88.2",
     "serve-favicon": "^2.5.0",
-    "sharp": "^0.32.5"
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
