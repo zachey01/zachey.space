@@ -1,15 +1,17 @@
 ---
-data: 2023-08-15
-title: Rendering BSP maps in the browser
-tags: Source Engine, Blender, 3D, HTML
-description: Various ways to render BSP maps in the browser...
+description: Comparison of methods for rendering BSP maps in the browser using VBsp.JS and ModelViewer in combination with Blender
+title: Rendering BSP maps in the browser 🗺️
+date: August 14, 2023
+emoji: 🗺️
 ---
 
-### Introduction
+# Rendering BSP maps in the browser 🗺️
 
-Recently to me for my previous [project](https://github.com/zachey01/MimiCMS) it was necessary to render the BSP map in the browser, or rather on the map preview page. At that time, there was already a [solution] (https://github.com/MDFL64/vbsp.js) of this problem.
+## Introduction
 
-#### [VBsp.JS](https://github.com/MDFL64/vbsp.js)
+Recently to me for my previous [project](https://github.com/zachey01/MimiCMS) it was necessary to render the BSP map in the browser, or rather on the map preview page. At that time, there was already a [solution](https://github.com/MDFL64/vbsp.js) of this problem.
+
+### [VBsp.JS](https://github.com/MDFL64/vbsp.js)
 
 This method has many advantages:
 
@@ -25,27 +27,33 @@ But there are also significant disadvantages:
 - does not work on mobile devices;
 - textures are not detailed.
 
-##### Usage
+#### Usage
 
-[Download](/blog/render-bsp/VBsp-demo.zip)
+[Download](https://www.sendspace.com/file/ok3iq5)
 
-<pre><code>
-<div id="render" style="width: 800px; height: 600px; display: inline-block;"></div>
-<button onclick='map.loadMap("https://cdn.zachey.space/assets/gm_construct.bsp");'>gm_construct</button>
+```html
+<div
+  id="render"
+  style="width: 800px; height: 600px; display: inline-block;"
+></div>
+<button
+  onclick='map.loadMap("https://cdn.zachey.space/assets/gm_construct.bsp");'
+>
+  gm_construct
+</button>
 
 <script src="vbsp.js"></script>
 <script>
-var map = new VBSP();
-map.ready(function() {
-map.initRenderer(document.getElementById("render"));
-});
+  var map = new VBSP();
+  map.ready(function () {
+    map.initRenderer(document.getElementById("render"));
+  });
 </script>
+```
 
-</code></pre>
+![VBsp demo](https://telegra.ph/file/b39e74a08760191e092b7.png)
 
-![VBsp demo](/blog/render-bsp/vbsp-demo.png)
-
-#### [ModelViewer](https://modelviewer.dev) + [Blender](https://www.blender.org/)
+### [ModelViewer](https://modelviewer.dev) + Blender
 
 <kbd>Cons</kbd>:
 
@@ -59,23 +67,25 @@ map.initRenderer(document.getElementById("render"));
 - works everywhere
 - map
 
-##### Usage
+#### Usage
 
-###### Installation
+#### Installation
 
 1. Installing Blender and Java
 2. Installing addons in Blender:
 
-![](/blog/render-bsp/blender-addon1.png)
-Click Install and select the downloaded archive and enable the addon, do the same with the second addon
-![](/blog/render-bsp/blender-addon2.png)
+![](https://telegra.ph/file/15c3f5f112d6623bcdf18.png)
 
-3. Import VMF from the menu: <kbd>Import/Plumber/.vmf</kbd>
-4. Install skybox by selecting it and clicking on <kbd>Object/Transform VMF 3D sky</kbd>
-   > You can switch shaders => ![](/blog/render-bsp/blender-addon3.png)
+Click Install and select the downloaded archive and enable the addon, do the same with the second addon
+
+![](https://telegra.ph/file/7cc92c31cfd04e27cb76c.png)
+
+1. Import VMF from the menu: <kbd>Import/Plumber/.vmf</kbd>
+2. Install skybox by selecting it and clicking on <kbd>Object/Transform VMF 3D sky</kbd>
+   > You can switch shaders => ![](https://telegra.ph/file/1ed323bb09cf5bf0e22a5.png)
 
 **Result:**
 
-![Blender Result](/blog/render-bsp/blender-result.jpg =720x400)
+![Blender Result](https://telegra.ph/file/85cad0e26d2556540a070.jpg)
 
-4. And then through export to .GLB and add to the site via ModelViewer or Three.JS
+1. And then through export to .GLB and add to the site via ModelViewer or Three.JS

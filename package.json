@@ -1,11 +1,8 @@
 {
   "name": "zachey.space",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Personal website for Zachey",
-  "main": "app.js",
-  "scripts": {
-    "dev": "npx nodemon"
-  },
+  "main": "gulpfile.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zachey01/zachey.space.git"
@@ -15,27 +12,27 @@
     "website",
     "express"
   ],
-  "author": "Zachey",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zachey01/zachey.space/issues"
   },
-  "homepage": "https://www.zachey.space",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "compression": "^1.7.4",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-minify": "^1.0.0",
-    "express-minify-html": "^0.12.0",
-    "express-subdomain": "^1.0.5",
-    "request": "^2.88.2",
-    "serve-favicon": "^2.5.0",
-    "sharp": "^0.32.5"
+  "homepage": "https://zachey.space",
+  "scripts": {
+    "start": "npx gulp",
+    "build": "npx gulp build"
   },
+  "author": "Zachey",
+  "license": "MIT",
+  "type": "module",
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "gulp": "^5.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sitemap": "^8.0.0",
+    "gulp-terser": "^2.1.0",
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0",
+    "showdown": "^2.1.0"
   }
 }

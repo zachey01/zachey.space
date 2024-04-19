@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Elsie:wght@900&display=swap");
+
+body {
+  padding: 30px;
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+.article-name {
+  font-family: "Elsie", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 60px;
+}
+
+.article-content {
+  font-size: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+code {
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hljs {
+  background: black;
+}
+
+#listen-btn {
+  border: none;
+  background-color: black;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    @@include('./partials/head.html')
+    <script src="/js/main-model.js" async></script>
+  </head>
+  <body>
+    <div class="intro-title">
+      <div class="intro-title__back unselectable">ZACHEY</div>
+      <div class="intro-title__front unselectable">ZACHEY</div>
+    </div>
+
+    <div class="intro-main">
+      <section
+        class="container content-section text-center"
+        style="margin-top: 90px"
+      >
+        <div class="row">
+          <div class="col-sm">
+            <div id="skill-bar-wrapper">
+              <div class="text-left skillsbar-text">
+                NodeJS, JS, TS<span style="float: right">80%</span>
+                <div class="skillbar-container clearfix" data-percent="80%">
+                  <div
+                    class="skillbar-container__skills"
+                    style="background: white"
+                  ></div>
+                </div>
+
+                HTML, CSS, SCSS<span style="float: right">99%</span>
+                <div class="skillbar-container clearfix" data-percent="99%">
+                  <div
+                    class="skillbar-container__skills"
+                    style="background: white"
+                  ></div>
+                </div>
+
+                Godot<span style="float: right">50%</span>
+                <div class="skillbar-container clearfix" data-percent="50%">
+                  <div
+                    class="skillbar-container__skills"
+                    style="background: white"
+                  ></div>
+                </div>
+
+                Blender<span style="float: right">35%</span>
+                <div class="skillbar-container clearfix" data-percent="35%">
+                  <div
+                    class="skillbar-container__skills"
+                    style="background: white"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <model-viewer
+      src="/models/skull.glb"
+      shadow-intensity="0"
+      autoplay
+      ar
+      environment-image="/models/sky.jpg"
+      ar-modes="webxr scene-viewer quick-look"
+      class="skull-model"
+    ></model-viewer>
+  </body>
+</html>

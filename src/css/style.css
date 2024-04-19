@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
+
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+
+.intro-title div {
+  font-family: "Orbitron", sans-serif;
+  font-size: 15vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.intro-main {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 0;
+}
+
+.intro-main .title h2 {
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  text-align: center;
+}
+
+.intro-main .title {
+  text-align: center;
+}
+
+.intro-title__back {
+  color: white;
+  z-index: -1;
+}
+
+.intro-title__front {
+  color: transparent;
+  -webkit-text-stroke: 0.5vh white;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.skull-model {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 700px;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.skillbar-container {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+  width: 100%;
+  background-color: #666463;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 35px;
+  height: 5px;
+}
+
+.skillbar-container__skills {
+  height: 35px;
+  height: 5px;
+  width: 0px;
+  background: white;
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+}
+.skillsbar-text {
+  font-family: "Dela Gothic One", sans-serif;
+}

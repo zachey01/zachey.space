@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Elsie:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oi&display=swap");
+
+.blog-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog-article {
+  border: 1px gray solid;
+  border-radius: 5px;
+  width: 35%;
+  text-align: left;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+  margin: 10px;
+  padding-bottom: 10px;
+}
+.blog-article:hover {
+  border-color: white;
+  transform: scale(1.05);
+}
+
+.blog-article-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.blog-article-title {
+  font-size: 20px;
+  font-family: "Sixtyfour", sans-serif;
+}
+
+.blog-article-description {
+  font-family: "DM Sans", sans-serif;
+}
+
+.blog-article-date {
+  font-family: "DM Sans", sans-serif;
+}
+
+.title {
+  font-size: 70px;
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
