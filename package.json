@@ -18,7 +18,9 @@
   "homepage": "https://zachey.space",
   "scripts": {
     "start": "npx gulp",
-    "build": "npx gulp build"
+    "build": "npx gulp build",
+    "deploy": "npm run build && npx netlify deploy",
+    "deploy-production": "npx gulp clean && npm run build && npx netlify deploy --prod"
   },
   "author": "Zachey",
   "license": "MIT",

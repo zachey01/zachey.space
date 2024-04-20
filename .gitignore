@@ -2,3 +2,5 @@ node_modules
 skull.blend
 skull.blend1
 dist
+# Local Netlify folder
+.netlify
