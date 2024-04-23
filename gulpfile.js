@@ -38,6 +38,7 @@ gulp.task("minify-js", function () {
     .pipe(
       babel({
         presets: ["@babel/env"],
+        plugins: ["optimize-i18n"],
       })
     )
     .pipe(terser())
