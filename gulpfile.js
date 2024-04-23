@@ -7,6 +7,9 @@ import clean from "gulp-clean";
 import terser from "gulp-terser";
 import sitemap from "gulp-sitemap";
 import webserver from "gulp-webserver";
+import gulpFeed from "@zadkiel/gulp-feed";
+
+import { getBlogPosts } from "./scripts/blog-page-gen.js";
 
 gulp.task("minify-html", function () {
   return gulp
@@ -92,6 +95,13 @@ gulp.task("webserver", function () {
     })
   );
 });
+
+gulpFeed(getBlogPosts(), {
+  transform: (post) => post,
+  render: {
+    "feed.xml": "rss2",
+  },
+}).pipe(gulp.dest("dist/blog/"));
 
 gulp.task(
   "default",

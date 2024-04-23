@@ -8,7 +8,7 @@ const converter = new showdown.Converter();
 const sourceFolder = "./articles";
 const targetFolder = "./dist";
 
-const getAllMetadata = async () => {
+const getAllMetadata = () => {
   const metadata = [];
 
   const files = fs.readdirSync(sourceFolder);
@@ -19,7 +19,14 @@ const getAllMetadata = async () => {
     const frontMatter = content.substring(4, delimiterIndex);
     const { title, description, date } = yaml.load(frontMatter);
     const link = file.split(".")[0];
-    metadata.push({ title, description, date, link });
+    const postContent = content.substring(delimiterIndex + 4); // Content after front matter
+    metadata.push({
+      title,
+      description,
+      date,
+      content: converter.makeHtml(postContent),
+      link,
+    });
   }
 
   return metadata;
@@ -59,3 +66,8 @@ const generateHTML = async () => {
 };
 
 generateHTML();
+export const getBlogPosts = () => {
+  return getAllMetadata();
+};
+
+export default getBlogPosts;

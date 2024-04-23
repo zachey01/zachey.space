@@ -26,6 +26,7 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "@zadkiel/gulp-feed": "^0.0.5",
     "gulp": "^5.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
