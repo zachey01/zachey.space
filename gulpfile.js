@@ -6,6 +6,7 @@ import { exec } from "child_process";
 import clean from "gulp-clean";
 import terser from "gulp-terser";
 import sitemap from "gulp-sitemap";
+import webserver from "gulp-webserver";
 
 gulp.task("minify-html", function () {
   return gulp
@@ -82,6 +83,16 @@ gulp.task("sitemap", async function () {
     .pipe(gulp.dest("./dist"));
 });
 
+gulp.task("webserver", function () {
+  gulp.src("dist").pipe(
+    webserver({
+      livereload: true,
+      directoryListing: true,
+      open: true,
+    })
+  );
+});
+
 gulp.task(
   "default",
   gulp.series(
@@ -91,6 +102,7 @@ gulp.task(
     "copy-public",
     "markdown-to-html",
     "sitemap",
+    "webserver",
     "watch"
   )
 );
