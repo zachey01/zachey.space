@@ -8,6 +8,7 @@ import terser from "gulp-terser";
 import sitemap from "gulp-sitemap";
 import webserver from "gulp-webserver";
 import gulpFeed from "@zadkiel/gulp-feed";
+import babel from "gulp-babel";
 
 import { getBlogPosts } from "./scripts/blog-page-gen.js";
 
@@ -32,7 +33,15 @@ gulp.task("minify-css", function () {
 });
 
 gulp.task("minify-js", function () {
-  return gulp.src("src/js/*.js").pipe(terser()).pipe(gulp.dest("dist/js"));
+  return gulp
+    .src("src/js/*.js")
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
+    .pipe(terser())
+    .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task("copy-public", function () {
