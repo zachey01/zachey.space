@@ -39,7 +39,7 @@ gulp.task("minify-js", function () {
     .pipe(
       babel({
         presets: ["@babel/env"],
-        plugins: ["optimize-i18n"],
+        plugins: ["optimize-i18n", "minify-dead-code-elimination"],
       })
     )
     .pipe(javascriptObfuscator())
