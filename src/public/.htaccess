@@ -62,4 +62,11 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
     ExpiresByType text/xml "access plus 1 day"
 </ifModule>
 
-ErrorDocument 404 https://zachey.space/404.html
+ErrorDocument 404 https://zachey.space/error?code=404
+ErrorDocument 400 https://zachey.space/error?code=400
+ErrorDocument 403 https://zachey.space/error?code=403
+ErrorDocument 429 https://zachey.space/error?code=429
+ErrorDocument 414 https://zachey.space/error?code=414
+ErrorDocument 405 https://zachey.space/error?code=405
+ErrorDocument 408 https://zachey.space/error?code=408
+ErrorDocument 401 https://zachey.space/error?code=401
