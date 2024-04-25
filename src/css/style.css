@@ -9,7 +9,7 @@ body {
   position: relative;
 }
 
-.intro-title div {
+.intro-title h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 15vh;
   position: absolute;

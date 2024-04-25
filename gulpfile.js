@@ -122,7 +122,6 @@ gulp.task(
     "copy-public",
     "markdown-to-html",
     "sitemap",
-    "webserver",
     "watch"
   )
 );
