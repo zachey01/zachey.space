@@ -1,13 +1,14 @@
-let App = {};
-App.setup = function () {
+let ParticleSimulation = {};
+
+ParticleSimulation.setup = function () {
   let canvas = document.createElement("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  this.ctx = canvas.getContext("2d");
+  this.context = canvas.getContext("2d");
   this.width = canvas.width;
   this.height = canvas.height;
-  this.xC = canvas.width / 2;
-  this.yC = canvas.height / 2;
+  this.centerX = canvas.width / 2;
+  this.centerY = canvas.height / 2;
 
   document.getElementsByTagName("body")[0].appendChild(canvas);
 
@@ -15,64 +16,92 @@ App.setup = function () {
   this.particles = [];
   this.population = 150;
 
-  this.birth();
+  this.initializeParticles();
 };
-App.birth = function () {
+
+ParticleSimulation.initializeParticles = function () {
   for (let i = 0; i < this.population; i++) {
     let particle = {
       x: this.width * Math.random(),
       y: this.height * Math.random(),
-      xSpeed: 0,
-      ySpeed: 0,
+      xVelocity: 0,
+      yVelocity: 0,
       size: 8 + 30 * Math.random(),
     };
     this.particles.push(particle);
   }
 };
-App.evolve = function () {
+
+ParticleSimulation.evolve = function () {
   this.stepCount++;
-  App.move();
-  App.draw();
+  this.moveParticles();
+  this.drawParticles();
 };
-App.move = function () {
+
+ParticleSimulation.moveParticles = function () {
   for (let i = 0; i < this.particles.length; i++) {
-    let p = this.particles[i];
+    let particle = this.particles[i];
 
-    p.xSpeed += 1 * (-0.5 + Math.random());
-    p.ySpeed += 1 * (-0.5 + Math.random());
+    particle.xVelocity += 1 * (-0.5 + Math.random());
+    particle.yVelocity += 1 * (-0.5 + Math.random());
 
-    let k = 0.001;
-    p.xSpeed += k * (this.xC - p.x);
-    p.ySpeed += k * (this.yC - p.y);
-    p.xSpeed *= 0.99;
-    p.ySpeed *= 0.98;
+    let attractionStrength = 0.001;
+    particle.xVelocity += attractionStrength * (this.centerX - particle.x);
+    particle.yVelocity += attractionStrength * (this.centerY - particle.y);
+    particle.xVelocity *= 0.99;
+    particle.yVelocity *= 0.98;
 
-    p.x += p.xSpeed;
-    p.y += p.ySpeed;
+    particle.x += particle.xVelocity;
+    particle.y += particle.yVelocity;
   }
 };
-App.draw = function () {
-  this.ctx.beginPath();
-  this.ctx.clearRect(0, 0, this.width, this.height);
-  this.ctx.closePath();
+
+ParticleSimulation.drawParticles = function () {
+  this.context.beginPath();
+  this.context.clearRect(0, 0, this.width, this.height);
+  this.context.closePath();
 
   for (let i = 0; i < this.particles.length; i++) {
-    let p = this.particles[i];
-    this.ctx.beginPath();
-    this.ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI, true);
-    this.ctx.fillStyle = "white";
-    this.ctx.fill();
-    this.ctx.closePath();
+    let particle = this.particles[i];
+    this.context.beginPath();
+    this.context.arc(
+      particle.x,
+      particle.y,
+      particle.size,
+      0,
+      2 * Math.PI,
+      true
+    );
+    this.context.fillStyle = "white";
+    this.context.fill();
+    this.context.closePath();
   }
 };
+
+function nameError() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const codeValue = urlParams.get("code");
+
+  let pageTitle = document.querySelector("title");
+  let mainTitle = document.querySelector("h1.unselectable");
+
+  if (codeValue === null) {
+    pageTitle.innerText = "Error";
+    mainTitle.innerText = "Error";
+  } else {
+    pageTitle.innerText = "Error: " + codeValue;
+    mainTitle.innerText = codeValue;
+  }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-  App.setup();
-  App.draw();
+  ParticleSimulation.setup();
 
-  let frame = function () {
-    App.evolve();
-    requestAnimationFrame(frame);
+  let animationFrame = function () {
+    ParticleSimulation.evolve();
+    requestAnimationFrame(animationFrame);
   };
-  frame();
+  animationFrame();
+
+  nameError();
 });
