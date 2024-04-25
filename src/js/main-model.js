@@ -42,3 +42,8 @@ function animateSkill(element, targetWidth) {
 
   window.requestAnimationFrame(step);
 }
+
+// Remove model-viewer button
+document.querySelectorAll("#default-ar-button").forEach((button) => {
+  button.remove();
+});
