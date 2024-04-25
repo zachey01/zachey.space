@@ -7,6 +7,13 @@
     <script src="/js/get-blog-posts.js" async></script>
     <link rel="stylesheet" href="/css/blog.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
+    <style>
+      #latest-posts {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
   </head>
   <body>
     <div class="intro-title">
@@ -69,5 +76,11 @@
       ar-modes="webxr scene-viewer quick-look"
       class="skull-model"
     ></model-viewer>
+    <h2 style="text-align: center">Latest posts:</h2>
+
+    <div id="latest-posts"></div>
+    <button class="more-btn" onclick="location.href='/blog'" title="/blog">
+      load more...
+    </button>
   </body>
 </html>

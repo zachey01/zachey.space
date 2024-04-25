@@ -7,7 +7,9 @@ fetch("/blog/feed.xml")
     const items = xmlDoc.querySelectorAll("item");
     const totalItems = items.length;
 
-    for (let i = totalItems - 3; i < totalItems; i++) {
+    const startIndex = Math.max(totalItems - 3, 0); // Ensure startIndex is within bounds
+
+    for (let i = startIndex; i < totalItems; i++) {
       const item = items[i];
       const titleElement = item.querySelector("title");
       const linkElement = item.querySelector("link");
@@ -36,8 +38,7 @@ fetch("/blog/feed.xml")
         description.textContent = post.description;
         blogArticle.appendChild(description);
 
-        document.body.appendChild(blogArticle);
-      } else {
+        document.getElementById("latest-posts").appendChild(blogArticle);
       }
     }
   })

@@ -18,6 +18,11 @@ body {
   transform: translate(-50%, -50%);
 }
 
+h2 {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 5vh;
+}
+
 .intro-main {
   position: absolute;
   top: 10%;
@@ -82,6 +87,18 @@ body {
   background: white;
   box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
 }
+
 .skillsbar-text {
   font-family: "Dela Gothic One", sans-serif;
+}
+
+.more-btn {
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-size: 40px;
+  margin-left: 15%;
+  font-family: "Micro 5", sans-serif;
+  cursor: pointer;
 }
