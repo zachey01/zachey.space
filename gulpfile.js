@@ -9,6 +9,7 @@ import sitemap from "gulp-sitemap";
 import webserver from "gulp-webserver";
 import gulpFeed from "@zadkiel/gulp-feed";
 import babel from "gulp-babel";
+import javascriptObfuscator from "gulp-javascript-obfuscator";
 
 import { getBlogPosts } from "./scripts/blog-page-gen.js";
 
@@ -41,6 +42,7 @@ gulp.task("minify-js", function () {
         plugins: ["optimize-i18n"],
       })
     )
+    .pipe(javascriptObfuscator())
     .pipe(terser())
     .pipe(gulp.dest("dist/js"));
 });
